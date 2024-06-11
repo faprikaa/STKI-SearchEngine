@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "webapp.apps.WebappConfig",
-    "debug_toolbar"
+    "debug_toolbar",
+    "django_dump_die"
 ]
 
 MIDDLEWARE = [
@@ -47,7 +48,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware"
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'django_dump_die.middleware.DumpAndDieMiddleware',
+
 ]
 
 ROOT_URLCONF = 'STKI_SearchEngine.urls'
