@@ -22,6 +22,7 @@ import webapp.views
 urlpatterns = [
     path("", webapp.views.index, name="index"),
     path("alldata/", webapp.views.alldata, name="alldata"),
+    path("deletemakanan/<int:id>", webapp.views.deletemakanan, name="deletemakanan"),
     path("__debug__/", include("debug_toolbar.urls")),
     path('admin/', admin.site.urls),
 ]
