@@ -23,6 +23,7 @@ urlpatterns = [
     path("", webapp.views.index, name="index"),
     path("alldata/", webapp.views.alldata, name="alldata"),
     path("test/", webapp.views.test, name="test"),
+    path("search/", webapp.views.test, name="search"),
     path("deletemakanan/<int:id>", webapp.views.deletemakanan, name="deletemakanan"),
     path("__debug__/", include("debug_toolbar.urls")),
     path('admin/', admin.site.urls),
