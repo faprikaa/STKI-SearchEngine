@@ -4,34 +4,57 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, redirect
-from django_dump_die.middleware import dd
-from nltk.stem import PorterStemmer
-from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 from .models import Makanan
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+
 # create stemmer
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 
-# Define a custom tokenizer that stems words and removes stopwords
-# stemmer = PorterStemmer()
-# stop_words = set(stopwords.words('indonesia'))
-
 nltk.download('punkt')
 
 stop_factory = StopWordRemoverFactory().get_stop_words()
-
 
 def stemmed_words(doc):
     return ' '.join([stemmer.stem(word) for word in nltk.word_tokenize(doc) if word.lower() not in stop_factory])
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    query = request.POST.get('q', '')
+
+    queryset = Makanan.objects.all()
+    data = list(queryset.values())
+
+    df = pd.DataFrame(data)
+    df['stemmed_deskripsi'] = df['deskripsi'].apply(stemmed_words)
+    df['stemmed_bahan'] = df['bahan'].apply(stemmed_words)
+    df['stemmed_nama'] = df['nama'].apply(stemmed_words)
+
+    df['combined_text'] = df['stemmed_deskripsi'] + ' ' + df['stemmed_bahan'] + ' ' + df['stemmed_nama']
+
+    count_vect = CountVectorizer()
+    X_train_counts = count_vect.fit_transform(df['combined_text'])
+
+    tfidf_transformer = TfidfTransformer()
+    X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
+
+    results = []
+    if query:
+        stemmed_query = [stemmed_words(query)]
+        X_query_counts = count_vect.transform(stemmed_query)
+        X_query_tfidf = tfidf_transformer.transform(X_query_counts)
+
+        cosine_similarities = cosine_similarity(X_query_tfidf, X_train_tfidf).flatten()
+        df['weight'] = cosine_similarities
+        df = df.sort_values(by='weight', ascending=False)
+
+        results = df[df['weight'] > 0].to_dict(orient='records')
+
+    return render(request, 'index.html', {'results': results, 'query': query})
 
 
 def alldata(request):
@@ -97,11 +120,11 @@ def test(request):
     return render(request, 'search_test.html', {'data': df.to_html()})
 
 
-def search():
-    queryset = Makanan.objects.all()
-
-    data = list(queryset.values())
-
-    # Convert the food data into a DataFrame
-    df = pd.DataFrame(data)
-    dd(data)
+# def search():
+#     queryset = Makanan.objects.all()
+#
+#     data = list(queryset.values())
+#
+#     # Convert the food data into a DataFrame
+#     df = pd.DataFrame(data)
+#     dd(data)

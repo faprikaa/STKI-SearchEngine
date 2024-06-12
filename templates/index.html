@@ -2,8 +2,11 @@
 
 {% block content %}
     <div class="container-fluid">
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_dark_color_272x92dp.png" class="mx-auto pt-52">
-        <form class="max-w-md mx-auto" method="post" action="{% url 'search' %}">
+        <div class="mx-auto pt-1 max-w-xs max-h-64">
+            <img src="https://i1.wp.com/pbs.twimg.com/media/EcxupR6UcAAjllf.jpg" class="object-cover w-full h-full" alt="gulu">
+        </div>
+
+        <form class="max-w-md mx-auto" method="post" action="{% url 'index' %}">
             {% csrf_token %}
             <label for="default-search"
                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -12,7 +15,7 @@
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"></path>
                     </svg>
                 </div>
                 <input type="search" id="default-search" value="{{ query }}" name="q"
@@ -25,5 +28,51 @@
             </div>
         </form>
 
+        <!-- component -->
+        <div class="mt-10">
+            <style>
+                .truncate {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 1100px; /* Adjust the width as needed */
+                }
+            </style>
+            {% if query %}
+                <div class="mt-10">
+                    {% if results %}
+                        <div class="flex flex-col p-2 py-6 m-h-screen">
+                            <div class="flex flex-col gap-4 lg:p-4 p-2 rounde-lg m-2">
+                                <div class="lg:text-2xl md:text-xl text-lg lg:p-3 p-1 font-black text-gray-700">
+                                    Hasil untuk query "{{ query }}"
+                                </div>
+                                {% for result in results %}
+                                    <div class="flex items-center justify-between w-full p-2 lg:rounded-full md:rounded-full hover:bg-gray-100 cursor-pointer border-2 rounded-lg">
+                                        <div class="lg:flex md:flex items-center">
+                                            <div class="h-12 w-12 mb-2 lg:mb-0 border md:mb-0 rounded-full mr-3 bg-gray-300 flex items-center justify-center text-gray-600 font-bold text-xl">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <div class="text-sm leading-3 text-gray-700 font-bold w-full truncate">{{ result.nama }}</div>
+                                                <div class="text-xs text-gray-600 w-full truncate">{{ result.deskripsi }}</div>
+                                            </div>
+                                        </div>
+                                        <svg class="h-6 w-6 mr-1 invisible md:visible lg:visible xl:visible"
+                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                  clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="text-center text-gray-700 mt-10">
+                            Tidak ada hasil yang ditemukan untuk query "{{ query }}"
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock content %}
