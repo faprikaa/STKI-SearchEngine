@@ -2,7 +2,14 @@
 
 {% block content %}
     <div class="container-fluid">
-    {{ data|safe }}
+        <h2>Stop Words</h2>
+        <ul>
+            {% for word in stop_words %}
+                <li>{{ word }}</li>
+            {% endfor %}
+        </ul>
 
+        <h2>Data</h2>
+        {{ data|safe }}
     </div>
 {% endblock content %}

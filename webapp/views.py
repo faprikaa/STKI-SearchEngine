@@ -19,8 +19,11 @@ nltk.download('punkt')
 
 stop_factory = StopWordRemoverFactory().get_stop_words()
 
+
 def stemmed_words(doc):
     return ' '.join([stemmer.stem(word) for word in nltk.word_tokenize(doc) if word.lower() not in stop_factory])
+
+
 # Create your views here.
 
 def index(request):
@@ -76,12 +79,19 @@ def alldata(request):
     context = {
         'makanan': makanan,
         'query': query,
+        'stop_words': stop_factory,
     }
 
-    return render(request, "alldata.html", {'makanan': makanan})
+    return render(request, "alldata.html", context)
 
 
 def deletemakanan(request, id):
+    mkn = Makanan.objects.get(id=id)
+    mkn.delete()
+    return redirect("/alldata")
+
+
+def info(request, id):
     mkn = Makanan.objects.get(id=id)
     mkn.delete()
     return redirect("/alldata")
@@ -100,7 +110,6 @@ def test(request):
     df['stemmed_nama'] = df['nama'].apply(stemmed_words)
     df['combined_text'] = df['stemmed_deskripsi'] + ' ' + df['stemmed_bahan'] + ' ' + df['stemmed_nama']
 
-
     count_vect = CountVectorizer()
     X_train_counts = count_vect.fit_transform(df['combined_text'])
 
@@ -115,16 +124,4 @@ def test(request):
         df['weight'] = cosine_similarities
         df.sort_values(by='weight', ascending=False, inplace=True)
 
-    # Print the DataFrame
-    # print(df[['name', 'deskripsi', 'stemmed_deskripsi', 'weight']])
-    return render(request, 'search_test.html', {'data': df.to_html()})
-
-
-# def search():
-#     queryset = Makanan.objects.all()
-#
-#     data = list(queryset.values())
-#
-#     # Convert the food data into a DataFrame
-#     df = pd.DataFrame(data)
-#     dd(data)
+    return render(request, 'search_test.html', {'data': df.to_html(), 'stop_words': stop_factory})
