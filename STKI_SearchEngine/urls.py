@@ -14,10 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
 import webapp.views
+from STKI_SearchEngine import settings
 
 urlpatterns = [
     path("", webapp.views.index, name="index"),
@@ -26,4 +28,5 @@ urlpatterns = [
     path("deletemakanan/<int:id>", webapp.views.deletemakanan, name="deletemakanan"),
     path("__debug__/", include("debug_toolbar.urls")),
     path('admin/', admin.site.urls),
+    path('alldata/', webapp.views.alldata, name='nama_view'),
 ]

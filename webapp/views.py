@@ -71,7 +71,6 @@ def alldata(request):
     else:
         makanan = Makanan.objects.all()
 
-    makanan = Makanan.objects.all()
     paginator = Paginator(makanan, 5)
     page_number = request.GET.get('page')
     makanan = paginator.get_page(page_number)
@@ -95,6 +94,7 @@ def info(request, id):
     mkn = Makanan.objects.get(id=id)
     mkn.delete()
     return redirect("/alldata")
+
 
 
 def test(request):
