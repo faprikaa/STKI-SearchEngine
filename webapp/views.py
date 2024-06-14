@@ -1,3 +1,4 @@
+import re
 import nltk
 import pandas as pd
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
@@ -6,12 +7,12 @@ from django.db.models import Q
 from django.shortcuts import render, redirect
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from fuzzywuzzy import fuzz, process
 
 from .models import Makanan
-
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-# create stemmer
+# Create stemmer
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 
@@ -20,14 +21,31 @@ nltk.download('punkt')
 stop_factory = StopWordRemoverFactory().get_stop_words()
 
 
+def preprocess_query(query):
+    # Menghapus spasi tambahan
+    query = re.sub(r'\s+', ' ', query).strip()
+    # Menghapus karakter yang berulang
+    query = re.sub(r'(.)\1+', r'\1', query)
+    return query
+
+
 def stemmed_words(doc):
+    # Preprocessing
+    doc = preprocess_query(doc)
     return ' '.join([stemmer.stem(word) for word in nltk.word_tokenize(doc) if word.lower() not in stop_factory])
 
 
-# Create your views here.
+def get_fuzzy_matches(query, choices, limit=5):
+    # Menggunakan fuzzywuzzy untuk mencocokkan query dengan data
+    results = process.extract(query, choices, limit=limit)
+    return results
+
 
 def index(request):
     query = request.POST.get('q', '')
+
+    if query:
+        query = preprocess_query(query)
 
     queryset = Makanan.objects.all()
     data = list(queryset.values())
@@ -46,6 +64,7 @@ def index(request):
     X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 
     results = []
+    suggestion = None
     if query:
         stemmed_query = [stemmed_words(query)]
         X_query_counts = count_vect.transform(stemmed_query)
@@ -55,9 +74,15 @@ def index(request):
         df['weight'] = cosine_similarities
         df = df.sort_values(by='weight', ascending=False)
 
-        results = df[df['weight'] > 0].to_dict(orient='records')
+        results = df[df['weight'] > 0.01].to_dict(orient='records')
 
-    return render(request, 'index.html', {'results': results, 'query': query})
+        if len(results) == 0:
+            choices = df['nama'].tolist()
+            fuzzy_matches = get_fuzzy_matches(query, choices)
+            if fuzzy_matches:
+                suggestion = fuzzy_matches[0][0]  # Mengambil kata dengan kecocokan tertinggi
+
+    return render(request, 'index.html', {'results': results, 'query': query, 'suggestion': suggestion})
 
 
 def alldata(request):
@@ -95,6 +120,9 @@ def info(request, id):
     mkn.delete()
     return redirect("/alldata")
 
+
+def about_us(request):
+    return render(request, 'about_us.html')
 
 
 def test(request):

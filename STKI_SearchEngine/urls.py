@@ -29,4 +29,6 @@ urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
     path('admin/', admin.site.urls),
     path('alldata/', webapp.views.alldata, name='nama_view'),
+    path('about_us/', webapp.views.about_us, name='about_us'),
+
 ]

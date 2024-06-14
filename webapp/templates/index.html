@@ -31,7 +31,7 @@
 
     <div>
         {% if query %}
-            <div class="mt-2">
+            <div class="mt-1">
                 {% if results %}
                     <div class="flex flex-col p-2 py-6 m-h-screen">
                         <div class="flex flex-col gap-4 lg:p-4 p-2 rounde-lg m-2">
@@ -39,33 +39,46 @@
                                 Hasil untuk query "{{ query }}"
                             </div>
                             {% for result in results %}
-                                <div class="flex items-center hover:bg-neutral-content/50 justify-between w-full p-2 lg:rounded-full md:rounded-full cursor-pointer border-2 rounded-lg">
-                                    <div class="lg:flex md:flex hover items-center" type="button"
-                                         onclick="openModal('{{ result.id }}', '{{ result.nama }}', '{{ result.bahan }}', '{{ result.deskripsi }}')">
-                                        <div class="h-12 w-12 mb-2 lg:mb-0 border md:mb-0 rounded-full mr-3 flex items-center justify-center font-bold text-xl"
-                                             style="background-color: rgb(85, 173, 155);"></div>
-                                        <div class="flex flex-col">
-                                            <div class="text-sm leading-3 font-bold w-full truncate">{{ result.nama }}</div>
-                                            <div class="text-sm w-full truncate">{{ result.deskripsi }}</div>
-                                            <div class="w-64 mt-2 text-white bg-green-600 font-medium rounded-lg text-sm px-4 py-2">
-                                                <p>Bobot : {{ result.weight }}</p>
+                                    <div class="flex items-center hover:bg-neutral-content/50 justify-between w-full p-2 lg:rounded-full md:rounded-full cursor-pointer border-2 rounded-lg">
+                                        <div class=" lg:flex md:flex hover items-center" type="button"
+                                             onclick="openModal('{{ result.id }}', '{{ result.nama }}', '{{ result.bahan }}', '{{ result.deskripsi }}')">
+                                            <div class="h-12 w-12 mb-2 lg:mb-0 border md:mb-0 rounded-full mr-3 flex items-center justify-center font-bold text-xl"
+                                                 style="background-color: rgb(85, 173, 155);"></div>
+                                            <div class="flex flex-col">
+                                                <div class="text-sm font-bold w-full truncate">{{ result.nama }}</div>
+                                                <div class="text-sm w-full truncate">{{ result.deskripsi }}</div>
+                                                <div class="w-64 mt-2 text-white bg-green-600 font-medium rounded-lg text-sm px-4 py-2">
+                                                    <p>Bobot : {{ result.weight }}</p>
+                                                </div>
                                             </div>
                                         </div>
+                                        <svg class="h-6 w-6 mr-1 invisible md:visible lg:visible xl:visible"
+                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                  clip-rule="evenodd"></path>
+                                        </svg>
                                     </div>
-                                    <svg class="h-6 w-6 mr-1 invisible md:visible lg:visible xl:visible"
-                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                              clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
                             {% endfor %}
                         </div>
                     </div>
                 {% else %}
-                    <div class="text-center text-gray-700 mt-10">
-                        Tidak ada hasil yang ditemukan untuk query "{{ query }}"
+                    <div class="lg:text-2xl md:text-xl text-lg lg:p-3 p-1 font-black flex items-center justify-center">
+                        Tidak ada hasil untuk query "{{ query }}"
                     </div>
+                    {% if suggestion %}
+                        <div class="text-center mt-4">
+                            <p class="text-lg">Mungkin maksud Anda: <strong>{{ suggestion }}</strong></p>
+                            <form method="post" action="{% url 'index' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="q" value="{{ suggestion }}">
+                                <button type="submit"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 mt-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Cari "{{ suggestion }}"
+                                </button>
+                            </form>
+                        </div>
+                    {% endif %}
                 {% endif %}
             </div>
         {% endif %}
