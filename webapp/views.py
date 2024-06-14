@@ -74,7 +74,7 @@ def index(request):
         df['weight'] = cosine_similarities
         df = df.sort_values(by='weight', ascending=False)
 
-        results = df[df['weight'] > 0.01].to_dict(orient='records')
+        results = df[df['weight'] > 0].to_dict(orient='records')
 
         if len(results) == 0:
             choices = df['nama'].tolist()
@@ -96,7 +96,7 @@ def alldata(request):
     else:
         makanan = Makanan.objects.all()
 
-    paginator = Paginator(makanan, 5)
+    paginator = Paginator(makanan, 15)
     page_number = request.GET.get('page')
     makanan = paginator.get_page(page_number)
 
