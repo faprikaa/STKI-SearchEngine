@@ -5,6 +5,7 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, redirect
+from django.views.decorators.common import no_append_slash
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from fuzzywuzzy import fuzz, process
@@ -41,6 +42,7 @@ def get_fuzzy_matches(query, choices, limit=5):
     return results
 
 
+@no_append_slash
 def index(request):
     query = request.GET.get('q', '')
 

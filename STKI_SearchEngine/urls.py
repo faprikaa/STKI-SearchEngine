@@ -17,13 +17,15 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 import webapp.views
 from STKI_SearchEngine import settings
 
 urlpatterns = [
     path("", webapp.views.index, name="index"),
-    path("search/", webapp.views.index, name="index"),
+    path("search/", RedirectView.as_view(url="/")),
+    path("search", webapp.views.index, name="index"),
     path("alldata/", webapp.views.alldata, name="alldata"),
     path("test/", webapp.views.test, name="test"),
     path("deletemakanan/<int:id>", webapp.views.deletemakanan, name="deletemakanan"),

@@ -1,0 +1,911 @@
+[
+    {
+        "model": "webapp.Makanan",
+        "pk": "1",
+        "fields": {
+            "nama": "Arsik",
+            "bahan": "Ikan Mas, Andaliman, Asam Gelugur",
+            "deskripsi": "Masakan ikan khas Batak dengan bumbu khas seperti andaliman dan asam gelugur."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "2",
+        "fields": {
+            "nama": "Ayam Betutu",
+            "bahan": "Ayam, Bumbu Bali",
+            "deskripsi": "Ayam yang dimasak dengan bumbu khas Bali dan dipanggang dalam bungkusan daun pisang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "3",
+        "fields": {
+            "nama": "Ayam Taliwang",
+            "bahan": "Ayam Kampung, Cabai, Terasi",
+            "deskripsi": "Ayam kampung yang dibakar dengan bumbu khas Lombok yang pedas dan gurih."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "4",
+        "fields": {
+            "nama": "Bakpia",
+            "bahan": "Tepung Terigu, Gula, Kacang Hijau",
+            "deskripsi": "Kue kering berisi kacang hijau manis yang berasal dari Yogyakarta."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "5",
+        "fields": {
+            "nama": "Bakso",
+            "bahan": "Daging Sapi, Tepung Tapioka, Bawang Putih",
+            "deskripsi": "Bola daging sapi yang disajikan dengan kuah kaldu yang gurih."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "6",
+        "fields": {
+            "nama": "Babi Guling",
+            "bahan": "Babi, Bumbu Bali, Daun Singkong",
+            "deskripsi": "Babi panggang dengan bumbu khas Bali yang disajikan dengan sayuran dan sambal."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "7",
+        "fields": {
+            "nama": "Bandeng Presto",
+            "bahan": "Ikan Bandeng, Bumbu Kuning, Presto",
+            "deskripsi": "Ikan bandeng yang dimasak dengan bumbu kuning menggunakan teknik presto sehingga durinya lunak."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "8",
+        "fields": {
+            "nama": "Batagor",
+            "bahan": "Tahu, Ikan Tenggiri, Tepung Tapioka",
+            "deskripsi": "Tahu dan ikan tenggiri yang digoreng dan disajikan dengan saus kacang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "9",
+        "fields": {
+            "nama": "Bika Ambon",
+            "bahan": "Tepung Sagu, Telur, Santan",
+            "deskripsi": "Kue khas Medan yang memiliki tekstur kenyal dan rasa manis."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "10",
+        "fields": {
+            "nama": "Botok",
+            "bahan": "Tahu, Tempe, Kelapa Parut",
+            "deskripsi": "Hidangan kukus yang dibungkus daun pisang, berisi tahu, tempe, dan kelapa parut."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "11",
+        "fields": {
+            "nama": "Bubur Ayam",
+            "bahan": "Beras, Ayam, Kaldu Ayam",
+            "deskripsi": "Bubur nasi dengan ayam suwir, kacang, dan kerupuk yang disajikan dengan kuah kaldu."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "12",
+        "fields": {
+            "nama": "Bubur Manado",
+            "bahan": "Beras, Sayuran, Ikan Asap",
+            "deskripsi": "Bubur nasi yang dicampur dengan berbagai sayuran dan ikan asap, khas Manado."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "13",
+        "fields": {
+            "nama": "Bubur Tinotuan",
+            "bahan": "Beras, Sayuran, Ikan Asap",
+            "deskripsi": "Bubur nasi yang dicampur dengan berbagai sayuran dan ikan asap, khas Manado (nama lain dari Bubur Manado)."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "14",
+        "fields": {
+            "nama": "Cincang Batokok",
+            "bahan": "Daging Sapi, Cabai, Bawang Putih",
+            "deskripsi": "Masakan daging sapi khas Minangkabau yang dipukul-pukul dan dimasak dengan bumbu pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "15",
+        "fields": {
+            "nama": "Cilok",
+            "bahan": "Tepung Tapioka, Daging Sapi, Saus Kacang",
+            "deskripsi": "Bola-bola tepung tapioka yang disajikan dengan saus kacang pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "16",
+        "fields": {
+            "nama": "Combro",
+            "bahan": "Singkong, Oncom",
+            "deskripsi": "Kue goreng berbahan singkong parut berisi oncom pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "17",
+        "fields": {
+            "nama": "Dendeng Balado",
+            "bahan": "Daging Sapi, Cabai Merah",
+            "deskripsi": "Daging sapi yang diiris tipis, digoreng kering, dan disajikan dengan sambal balado pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "18",
+        "fields": {
+            "nama": "Dodol",
+            "bahan": "Tepung Ketan, Gula Kelapa, Santan",
+            "deskripsi": "Kue tradisional kenyal dan manis yang terbuat dari tepung ketan dan gula kelapa."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "19",
+        "fields": {
+            "nama": "Es Cendol",
+            "bahan": "Tepung Beras, Santan, Gula Merah",
+            "deskripsi": "Minuman manis yang terbuat dari tepung beras, santan, dan gula merah dengan es serut."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "20",
+        "fields": {
+            "nama": "Es Pisang Ijo",
+            "bahan": "Pisang, Tepung Beras, Santan",
+            "deskripsi": "Pisang yang dibalut dengan adonan tepung beras berwarna hijau, disajikan dengan kuah santan."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "21",
+        "fields": {
+            "nama": "Gado-Gado",
+            "bahan": "Sayuran, Tahu, Tempe, Bumbu Kacang",
+            "deskripsi": "Salad khas Indonesia dengan sayuran, tahu, tempe, dan saus kacang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "22",
+        "fields": {
+            "nama": "Gethuk",
+            "bahan": "Singkong, Gula Kelapa",
+            "deskripsi": "Makanan ringan dari singkong yang dihaluskan dan dicampur dengan gula kelapa."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "23",
+        "fields": {
+            "nama": "Gudeg",
+            "bahan": "Nangka Muda, Santan, Telur, Ayam",
+            "deskripsi": "Masakan dari nangka muda yang dimasak dengan santan dan rempah khas Yogyakarta."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "24",
+        "fields": {
+            "nama": "Ikan Bakar",
+            "bahan": "Ikan, Bumbu Rempah",
+            "deskripsi": "Ikan yang dibakar dengan bumbu rempah dan disajikan dengan sambal."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "25",
+        "fields": {
+            "nama": "Jengkol Balado",
+            "bahan": "Jengkol, Cabai Merah, Bawang Merah",
+            "deskripsi": "Jengkol yang dimasak dengan bumbu balado pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "26",
+        "fields": {
+            "nama": "Karedok",
+            "bahan": "Sayuran Mentah, Bumbu Kacang",
+            "deskripsi": "Salad khas Sunda dengan sayuran mentah dan saus kacang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "27",
+        "fields": {
+            "nama": "Kerak Telor",
+            "bahan": "Telur Bebek, Beras Ketan, Serundeng",
+            "deskripsi": "Makanan khas Betawi yang terbuat dari telur bebek dan beras ketan, dimasak dengan serundeng."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "28",
+        "fields": {
+            "nama": "Keripik Sanjai",
+            "bahan": "Singkong, Cabai, Gula",
+            "deskripsi": "Keripik singkong pedas manis khas Bukittinggi."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "29",
+        "fields": {
+            "nama": "Keripik Tempe",
+            "bahan": "Tempe, Tepung Beras, Bumbu Rempah",
+            "deskripsi": "Keripik yang terbuat dari tempe yang diiris tipis dan digoreng dengan tepung beras berbumbu."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "30",
+        "fields": {
+            "nama": "Ketoprak",
+            "bahan": "Bihun, Tahu, Lontong, Bumbu Kacang",
+            "deskripsi": "Hidangan dengan bihun, tahu, dan lontong yang disajikan dengan saus kacang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "31",
+        "fields": {
+            "nama": "Kimchi",
+            "bahan": "Sawi Putih, Cabai, Bawang Putih",
+            "deskripsi": "Makanan fermentasi khas Korea yang terbuat dari sawi putih dan bumbu pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "32",
+        "fields": {
+            "nama": "Klepon",
+            "bahan": "Tepung Ketan, Gula Merah, Kelapa Parut",
+            "deskripsi": "Kue bola-bola ketan berisi gula merah dan dilapisi kelapa parut."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "33",
+        "fields": {
+            "nama": "Kuluban",
+            "bahan": "Sayuran, Kelapa Parut, Bumbu Pecel",
+            "deskripsi": "Salad sayuran yang dicampur dengan kelapa parut dan bumbu pecel."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "34",
+        "fields": {
+            "nama": "Kue Cubit",
+            "bahan": "Tepung Terigu, Telur, Gula",
+            "deskripsi": "Kue kecil yang dimasak dalam cetakan khusus, memiliki tekstur lembut dan rasa manis."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "35",
+        "fields": {
+            "nama": "Kue Lumpur",
+            "bahan": "Tepung Terigu, Kentang, Santan",
+            "deskripsi": "Kue yang terbuat dari tepung, kentang, dan santan dengan tekstur lembut."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "36",
+        "fields": {
+            "nama": "Kue Lumpur Surga",
+            "bahan": "Tepung Beras, Santan, Gula Merah",
+            "deskripsi": "Kue basah dengan tekstur lembut dan rasa manis yang khas dari gula merah dan santan."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "37",
+        "fields": {
+            "nama": "Kue Nastar",
+            "bahan": "Tepung Terigu, Selai Nanas",
+            "deskripsi": "Kue kering berisi selai nanas yang biasanya disajikan saat hari raya."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "38",
+        "fields": {
+            "nama": "Laksa Betawi",
+            "bahan": "Mie, Santan, Ayam, Rempah-rempah",
+            "deskripsi": "Sup mie khas Betawi dengan kuah santan dan bumbu rempah yang kaya."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "39",
+        "fields": {
+            "nama": "Lawar",
+            "bahan": "Daging Ayam, Kacang Panjang, Kelapa Parut",
+            "deskripsi": "Hidangan khas Bali yang terbuat dari campuran daging ayam, sayuran, dan kelapa parut berbumbu."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "40",
+        "fields": {
+            "nama": "Lemang",
+            "bahan": "Beras Ketan, Santan, Daun Pisang",
+            "deskripsi": "Beras ketan yang dimasak dalam bambu dengan santan dan daun pisang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "41",
+        "fields": {
+            "nama": "Lemper",
+            "bahan": "Beras Ketan, Ayam, Daun Pisang",
+            "deskripsi": "Beras ketan yang berisi daging ayam suwir, dibungkus daun pisang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "42",
+        "fields": {
+            "nama": "Lontong Balap",
+            "bahan": "Lontong, Tauge, Lento, Kuah Bumbu",
+            "deskripsi": "Hidangan khas Surabaya dengan lontong, tauge, lento, dan kuah bumbu kacang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "43",
+        "fields": {
+            "nama": "Lontong Sayur",
+            "bahan": "Lontong, Sayuran, Santan",
+            "deskripsi": "Lontong yang disajikan dengan sayuran dan kuah santan berempah."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "44",
+        "fields": {
+            "nama": "Lotek",
+            "bahan": "Sayuran, Bumbu Kacang",
+            "deskripsi": "Salad sayuran yang disajikan dengan bumbu kacang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "45",
+        "fields": {
+            "nama": "Lumpia",
+            "bahan": "Kulit Lumpia, Rebung, Ayam, Udang",
+            "deskripsi": "Gorengan yang berisi rebung, ayam, dan udang, dibungkus kulit lumpia."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "46",
+        "fields": {
+            "nama": "Mangut Lele",
+            "bahan": "Lele, Santan, Bumbu Kuning",
+            "deskripsi": "Ikan lele yang dimasak dengan kuah santan bumbu kuning khas Jawa Tengah."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "47",
+        "fields": {
+            "nama": "Martabak Manis",
+            "bahan": "Tepung Terigu, Gula, Selai",
+            "deskripsi": "Martabak tebal dengan berbagai isian manis seperti coklat, keju, atau selai."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "48",
+        "fields": {
+            "nama": "Martabak Telur",
+            "bahan": "Telur, Daging Sapi, Kulit Lumpia",
+            "deskripsi": "Martabak yang berisi telur dan daging sapi cincang, dibungkus kulit lumpia."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "49",
+        "fields": {
+            "nama": "Mendoan",
+            "bahan": "Tempe, Tepung Terigu, Bumbu Rempah",
+            "deskripsi": "Tempe yang digoreng dengan tepung terigu dan bumbu rempah, disajikan setengah matang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "50",
+        "fields": {
+            "nama": "Nasi Bebek",
+            "bahan": "Bebek, Nasi, Bumbu Bali",
+            "deskripsi": "Nasi yang disajikan dengan bebek goreng atau panggang dan bumbu khas Bali."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "51",
+        "fields": {
+            "nama": "Nasi Campur",
+            "bahan": "Nasi, Lauk Pauk Beragam",
+            "deskripsi": "Nasi yang disajikan dengan berbagai lauk pauk seperti ayam, telur, dan sambal."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "52",
+        "fields": {
+            "nama": "Nasi Goreng",
+            "bahan": "Nasi, Telur, Kecap, Bumbu Rempah",
+            "deskripsi": "Nasi yang digoreng dengan bumbu rempah, kecap, dan tambahan telur atau daging."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "53",
+        "fields": {
+            "nama": "Nasi Jenggo",
+            "bahan": "Nasi, Ayam, Sambal",
+            "deskripsi": "Hidangan khas Bali berupa nasi yang disajikan dengan ayam suwir dan sambal."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "54",
+        "fields": {
+            "nama": "Nasi Kuning",
+            "bahan": "Beras, Kunyit, Santan",
+            "deskripsi": "Nasi yang dimasak dengan kunyit dan santan sehingga berwarna kuning dan harum."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "55",
+        "fields": {
+            "nama": "Nasi Lemak",
+            "bahan": "Beras, Santan, Daun Pandan",
+            "deskripsi": "Nasi gurih khas Malaysia yang dimasak dengan santan dan daun pandan, disajikan dengan lauk."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "56",
+        "fields": {
+            "nama": "Nasi Liwet",
+            "bahan": "Beras, Santan, Ikan Asin",
+            "deskripsi": "Nasi gurih khas Solo yang dimasak dengan santan dan ikan asin."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "57",
+        "fields": {
+            "nama": "Nasi Padang",
+            "bahan": "Nasi, Lauk Pauk Padang",
+            "deskripsi": "Nasi yang disajikan dengan berbagai lauk khas Padang seperti rendang, gulai, dan sambal."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "58",
+        "fields": {
+            "nama": "Nasi Tumpeng",
+            "bahan": "Beras, Kunyit, Santan",
+            "deskripsi": "Nasi kuning yang dibentuk kerucut dan disajikan dengan berbagai lauk pauk."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "59",
+        "fields": {
+            "nama": "Nasi Tutug Oncom",
+            "bahan": "Nasi, Oncom, Bumbu Rempah",
+            "deskripsi": "Nasi yang dicampur dengan oncom yang telah dibumbui dan dibakar."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "60",
+        "fields": {
+            "nama": "Nasi Uduk",
+            "bahan": "Beras, Santan, Daun Salam",
+            "deskripsi": "Nasi yang dimasak dengan santan dan daun salam sehingga gurih dan wangi."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "61",
+        "fields": {
+            "nama": "Otak-Otak",
+            "bahan": "Ikan Tenggiri, Tepung Sagu, Daun Pisang",
+            "deskripsi": "Olahan ikan tenggiri yang dibungkus daun pisang dan dibakar atau dikukus."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "62",
+        "fields": {
+            "nama": "Papeda",
+            "bahan": "Sagu, Ikan Kuah Kuning",
+            "deskripsi": "Bubur sagu khas Papua yang disajikan dengan ikan kuah kuning."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "63",
+        "fields": {
+            "nama": "Pempek",
+            "bahan": "Ikan Tenggiri, Tepung Sagu, Kuah Cuko",
+            "deskripsi": "Olahan ikan tenggiri yang dicampur tepung sagu dan disajikan dengan kuah cuko asam pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "64",
+        "fields": {
+            "nama": "Pempek Palembang",
+            "bahan": "Ikan Tenggiri, Tepung Sagu, Kuah Cuko",
+            "deskripsi": "Pempek khas Palembang dengan ikan tenggiri dan kuah cuko yang khas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "65",
+        "fields": {
+            "nama": "Pepes Ikan",
+            "bahan": "Ikan, Bumbu Rempah, Daun Pisang",
+            "deskripsi": "Ikan yang dibumbui rempah dan dibungkus daun pisang, kemudian dikukus atau dibakar."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "66",
+        "fields": {
+            "nama": "Pepes Tahu",
+            "bahan": "Tahu, Bumbu Rempah, Daun Pisang",
+            "deskripsi": "Tahu yang dibumbui rempah dan dibungkus daun pisang, kemudian dikukus atau dibakar."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "67",
+        "fields": {
+            "nama": "Perkedel",
+            "bahan": "Kentang, Daging Cincang, Bumbu Rempah",
+            "deskripsi": "Kentang yang dihaluskan dan dicampur daging cincang serta bumbu, lalu digoreng."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "68",
+        "fields": {
+            "nama": "Pizza",
+            "bahan": "Tepung Terigu, Saus Tomat, Keju",
+            "deskripsi": "Hidangan roti yang diberi saus tomat, keju, dan berbagai topping, dipanggang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "69",
+        "fields": {
+            "nama": "Pisang Goreng",
+            "bahan": "Pisang, Tepung Terigu, Gula",
+            "deskripsi": "Pisang yang dibalut adonan tepung dan digoreng hingga kecoklatan."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "70",
+        "fields": {
+            "nama": "Ratatouille",
+            "bahan": "Sayuran, Saus Tomat",
+            "deskripsi": "Hidangan khas Perancis berupa sayuran yang dimasak dengan saus tomat."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "71",
+        "fields": {
+            "nama": "Rawon",
+            "bahan": "Daging Sapi, Kluwek, Bumbu Rempah",
+            "deskripsi": "Sup daging sapi dengan kuah hitam yang berasal dari kluwek dan bumbu rempah."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "72",
+        "fields": {
+            "nama": "Rendang",
+            "bahan": "Daging Sapi, Santan, Bumbu Rempah",
+            "deskripsi": "Masakan daging sapi yang dimasak dengan santan dan bumbu rempah hingga kering."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "73",
+        "fields": {
+            "nama": "Roti Unyil",
+            "bahan": "Tepung Terigu, Gula, Selai",
+            "deskripsi": "Roti kecil dengan berbagai isian manis atau gurih, khas Bogor."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "74",
+        "fields": {
+            "nama": "Rujak Cingur",
+            "bahan": "Cingur Sapi, Sayuran, Bumbu Petis",
+            "deskripsi": "Hidangan khas Surabaya berupa irisan cingur sapi dan sayuran dengan bumbu petis."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "75",
+        "fields": {
+            "nama": "Rujak Soto",
+            "bahan": "Daging Sapi, Sayuran, Bumbu Soto",
+            "deskripsi": "Perpaduan rujak dan soto dengan kuah soto yang gurih dan segar."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "76",
+        "fields": {
+            "nama": "Sambal Goreng Ati",
+            "bahan": "Ati Sapi, Kentang, Cabai",
+            "deskripsi": "Ati sapi yang dimasak dengan bumbu sambal goreng dan kentang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "77",
+        "fields": {
+            "nama": "Sayur Asem",
+            "bahan": "Sayuran, Asam Jawa, Bumbu Rempah",
+            "deskripsi": "Sayur berkuah bening dengan rasa asam segar dari asam jawa."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "78",
+        "fields": {
+            "nama": "Sayur Lodeh",
+            "bahan": "Sayuran, Santan, Bumbu Rempah",
+            "deskripsi": "Sayur berkuah santan dengan berbagai jenis sayuran."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "79",
+        "fields": {
+            "nama": "Sate Ayam",
+            "bahan": "Ayam, Kecap, Bumbu Kacang",
+            "deskripsi": "Potongan daging ayam yang ditusuk dan dibakar, disajikan dengan saus kacang atau kecap."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "80",
+        "fields": {
+            "nama": "Sate Kambing",
+            "bahan": "Kambing, Kecap, Bumbu Kacang",
+            "deskripsi": "Potongan daging kambing yang ditusuk dan dibakar, disajikan dengan saus kacang atau kecap."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "81",
+        "fields": {
+            "nama": "Sate Lilit",
+            "bahan": "Ikan, Kelapa Parut, Bumbu Rempah",
+            "deskripsi": "Sate khas Bali yang terbuat dari ikan dan kelapa parut yang dibumbui, dibakar dengan tusukan."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "82",
+        "fields": {
+            "nama": "Serabi",
+            "bahan": "Tepung Beras, Santan, Gula",
+            "deskripsi": "Kue tradisional yang terbuat dari tepung beras dan santan, disajikan dengan gula cair."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "83",
+        "fields": {
+            "nama": "Soto",
+            "bahan": "Daging Sapi/Ayam, Bumbu Rempah, Kuah",
+            "deskripsi": "Sup berisi daging sapi atau ayam dengan kuah berempah yang gurih."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "84",
+        "fields": {
+            "nama": "Soto Ayam",
+            "bahan": "Ayam, Bumbu Rempah, Kuah",
+            "deskripsi": "Soto dengan daging ayam dan kuah berempah."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "85",
+        "fields": {
+            "nama": "Soto Betawi",
+            "bahan": "Daging Sapi, Santan, Bumbu Rempah",
+            "deskripsi": "Soto khas Betawi dengan daging sapi dan kuah santan yang gurih."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "86",
+        "fields": {
+            "nama": "Soto Mie",
+            "bahan": "Mie, Daging Sapi, Bumbu Rempah",
+            "deskripsi": "Soto yang berisi mie dan daging sapi dengan kuah berempah."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "87",
+        "fields": {
+            "nama": "Sop Buntut",
+            "bahan": "Buntut Sapi, Bumbu Rempah, Sayuran",
+            "deskripsi": "Sup yang menggunakan buntut sapi sebagai bahan utama, dimasak dengan bumbu rempah."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "88",
+        "fields": {
+            "nama": "Sop Konro",
+            "bahan": "Iga Sapi, Bumbu Rempah",
+            "deskripsi": "Sup iga sapi khas Makassar dengan kuah berempah yang kental."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "89",
+        "fields": {
+            "nama": "Sup Ikan Batam",
+            "bahan": "Ikan, Bumbu Rempah, Sayuran",
+            "deskripsi": "Sup ikan dengan bumbu rempah khas dan sayuran, khas Batam."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "90",
+        "fields": {
+            "nama": "Sushi",
+            "bahan": "Nasi, Ikan Mentah, Rumput Laut",
+            "deskripsi": "Makanan Jepang berupa nasi yang dibentuk dengan isian ikan mentah dan dibungkus rumput laut."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "91",
+        "fields": {
+            "nama": "Tacos",
+            "bahan": "Tortilla, Daging, Sayuran, Saus",
+            "deskripsi": "Hidangan Meksiko berupa tortilla yang diisi dengan daging, sayuran, dan saus."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "92",
+        "fields": {
+            "nama": "Tahu Gejrot",
+            "bahan": "Tahu, Bumbu Kecap, Cabai",
+            "deskripsi": "Tahu goreng yang disajikan dengan saus kecap pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "93",
+        "fields": {
+            "nama": "Tahu Isi",
+            "bahan": "Tahu, Sayuran, Daging Ayam",
+            "deskripsi": "Tahu yang diisi dengan campuran sayuran dan daging ayam, kemudian digoreng."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "94",
+        "fields": {
+            "nama": "Tahu Kupat",
+            "bahan": "Tahu, Kupat, Sayuran, Bumbu Kacang",
+            "deskripsi": "Hidangan tahu dan kupat yang disajikan dengan sayuran dan saus kacang."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "95",
+        "fields": {
+            "nama": "Tahu Sumedang",
+            "bahan": "Tahu, Bumbu Rempah",
+            "deskripsi": "Tahu goreng khas Sumedang yang renyah di luar dan lembut di dalam."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "96",
+        "fields": {
+            "nama": "Tempe Mendoan",
+            "bahan": "Tempe, Tepung Terigu, Bumbu Rempah",
+            "deskripsi": "Tempe yang digoreng setengah matang dengan adonan tepung berbumbu."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "97",
+        "fields": {
+            "nama": "Tempoyak",
+            "bahan": "Durian Fermentasi, Cabai, Bumbu",
+            "deskripsi": "Hidangan dari durian yang difermentasi, disajikan dengan bumbu pedas."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "98",
+        "fields": {
+            "nama": "Tinutuan",
+            "bahan": "Beras, Sayuran, Ikan Asap",
+            "deskripsi": "Bubur Manado yang kaya sayuran dan disajikan dengan ikan asap."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "99",
+        "fields": {
+            "nama": "Tongseng",
+            "bahan": "Daging Kambing, Bumbu Rempah, Kol",
+            "deskripsi": "Masakan daging kambing berkuah dengan bumbu rempah dan kol."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "100",
+        "fields": {
+            "nama": "Tum Ayam",
+            "bahan": "Ayam, Bumbu Rempah, Daun Pisang",
+            "deskripsi": "Ayam berbumbu yang dibungkus daun pisang dan dikukus atau dibakar."
+        }
+    },
+    {
+        "model": "webapp.Makanan",
+        "pk": "101",
+        "fields": {
+            "nama": "Wedang Jahe",
+            "bahan": "Jahe, Gula Merah, Air",
+            "deskripsi": "Minuman hangat dari jahe dan gula merah, disajikan panas."
+        }
+    }
+]

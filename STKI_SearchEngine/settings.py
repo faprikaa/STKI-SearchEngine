@@ -30,6 +30,9 @@ ALLOWED_HOSTS = ['127.0.0.1:8000', 'localhost', '127.0.0.1']
 
 # Application definition
 
+APPEND_SLASH = False
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "webapp.apps.WebappConfig",
     "debug_toolbar",
-    "django_dump_die"
+    "django_dump_die",
+    "django_extensions",
+    'django_seed',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +90,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '3308'
+        'PORT': '3306'
     }
 }
 
