@@ -23,6 +23,7 @@ from STKI_SearchEngine import settings
 
 urlpatterns = [
     path("", webapp.views.index, name="index"),
+    path("search/", webapp.views.index, name="index"),
     path("alldata/", webapp.views.alldata, name="alldata"),
     path("test/", webapp.views.test, name="test"),
     path("deletemakanan/<int:id>", webapp.views.deletemakanan, name="deletemakanan"),

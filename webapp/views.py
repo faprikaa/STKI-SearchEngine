@@ -42,7 +42,7 @@ def get_fuzzy_matches(query, choices, limit=5):
 
 
 def index(request):
-    query = request.POST.get('q', '')
+    query = request.GET.get('q', '')
 
     if query:
         query = preprocess_query(query)
